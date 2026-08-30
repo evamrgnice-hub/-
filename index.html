@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>โปรแกรมจัดสรรกิจกรรม</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="skyler.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="app-header">
+
+<div class="app-logo">🗓️</div>
+
+<h1>
+โปรแกรมจัดสรรกิจกรรม
+<br>
+<small>Daily Activity Planner</small>
+</h1>
+
+</div>
+
+<div class="form">
+
+<div class="field">
+
+<label>
+วัน
+<br>
+<small>Day</small>
+</label>
+
+<select id="day">
+<option>Monday (จันทร์)</option>
+<option>Tuesday (อังคาร)</option>
+<option>Wednesday (พุธ)</option>
+<option>Thursday (พฤหัสบดี)</option>
+<option>Friday (ศุกร์)</option>
+<option>Saturday (เสาร์)</option>
+<option>Sunday (อาทิตย์)</option>
+</select>
+
+</div>
+
+<div class="field">
+
+<label>
+เวลาเริ่ม
+<br>
+<small>Start Time</small>
+</label>
+
+<input type="time" id="start">
+
+</div>
+
+<div class="field">
+
+<label>
+เวลาสิ้นสุด
+<br>
+<small>End Time</small>
+</label>
+
+<input type="time" id="end">
+
+</div>
+
+<div class="field field-grow">
+
+<label>
+ชื่อกิจกรรม
+<br>
+<small>Activity</small>
+</label>
+
+<input
+type="text"
+id="activity"
+placeholder="เช่น อ่านหนังสือ">
+
+</div>
+
+<div class="field">
+
+<label>
+สี
+<br>
+<small>Color</small>
+</label>
+
+<input
+type="color"
+id="color"
+value="#d9d9d9">
+
+</div>
+
+<button id="addBtn" class="btn-add" onclick="addActivity()">
+➕ เพิ่มกิจกรรม
+<br>
+Add Activity
+</button>
+
+</div>
+
+<hr>
+
+<h2>
+📋 รายการกิจกรรม
+<br>
+<small>Activity List</small>
+</h2>
+
+<ul id="list"></ul>
+
+<div class="buttons">
+
+<button onclick="generateTable()">
+⚙ ประมวลผล
+<br>
+Generate Schedule
+</button>
+
+<button onclick="downloadPNG()">
+📥 ดาวน์โหลด PNG
+<br>
+Download PNG
+</button>
+
+<button onclick="clearAll()" class="danger">
+🧹 ล้างทั้งหมด
+<br>
+Clear All
+</button>
+
+</div>
+
+<hr>
+
+<div id="schedule">
+
+<h2 style="text-align:center;">
+ตารางกิจกรรม
+<br>
+<small>Daily Schedule</small>
+</h2>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>วัน<br>Day</th>
+
+<th>เวลาเริ่ม<br>Start</th>
+
+<th>เวลาสิ้นสุด<br>End</th>
+
+<th>กิจกรรม<br>Activity</th>
+
+</tr>
+
+</thead>
+
+<tbody id="result">
+
+</tbody>
+
+</table>
+
+</div>
+
+<div id="gridSection">
+
+<h2 style="text-align:center;">
+📅 ตารางรายสัปดาห์
+<br>
+<small>Weekly Grid</small>
+</h2>
+
+<div id="freeSummary" class="free-summary"></div>
+
+<div id="grid"></div>
+
+<div class="buttons">
+
+<button onclick="downloadGridPNG()">
+📥 ดาวน์โหลด PNG
+<br>
+Download Grid PNG
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+
+<script src="jawa.js"></script>
+
+</body>
+
+</html>

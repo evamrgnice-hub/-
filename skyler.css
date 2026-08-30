@@ -1,0 +1,585 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Prompt","Tahoma",sans-serif;
+}
+
+body{
+    background:linear-gradient(180deg,#eef1f8 0%,#f6f7fb 40%,#f3f5fa 100%);
+    min-height:100vh;
+    padding:30px 16px;
+    color:#2b3245;
+}
+
+.container{
+    width:100%;
+    max-width:960px;
+    margin:auto;
+    background:#fff;
+    padding:28px;
+    border-radius:20px;
+    box-shadow:0 12px 34px rgba(30,40,90,.10);
+}
+
+/* ===== หัวเรื่อง ===== */
+.app-header{
+    position:relative;
+    overflow:hidden;
+    background:linear-gradient(135deg,#5b6ee1 0%,#7c5ce7 100%);
+    border-radius:18px;
+    padding:30px 20px 26px;
+    text-align:center;
+    margin-bottom:26px;
+    box-shadow:0 10px 24px rgba(91,110,225,.35);
+}
+
+.app-header::before{
+    content:"";
+    position:absolute;
+    width:170px;
+    height:170px;
+    border-radius:50%;
+    background:rgba(255,255,255,.12);
+    top:-60px;
+    right:-45px;
+}
+
+.app-header::after{
+    content:"";
+    position:absolute;
+    width:110px;
+    height:110px;
+    border-radius:50%;
+    background:rgba(255,255,255,.09);
+    bottom:-55px;
+    left:35px;
+}
+
+.app-logo{
+    font-size:42px;
+    margin-bottom:6px;
+}
+
+.app-header h1{
+    position:relative;
+    color:#fff;
+    font-size:26px;
+    letter-spacing:.5px;
+    margin:0;
+}
+
+.app-header h1 small{
+    color:rgba(255,255,255,.88);
+    font-size:15px;
+    font-weight:400;
+}
+
+h1{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+h2{
+    margin-top:26px;
+    margin-bottom:12px;
+    font-size:20px;
+    color:#3a4157;
+    line-height:1.5;
+}
+
+h2 small{
+    color:#8a93a6;
+    font-size:13px;
+    font-weight:400;
+}
+
+/* ===== ฟอร์ม ===== */
+.form{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+    align-items:flex-end;
+    background:#f8f9fe;
+    border:1px solid #eef0f8;
+    border-radius:16px;
+    padding:18px;
+    margin-bottom:20px;
+}
+
+.field{
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+}
+
+.field-grow{
+    flex:1;
+    min-width:180px;
+}
+
+.field label{
+    font-size:13px;
+    font-weight:600;
+    color:#4a5165;
+    line-height:1.3;
+}
+
+.field label small{
+    color:#a0a8ba;
+    font-size:11px;
+    font-weight:400;
+}
+
+.form input,
+.form select{
+    width:100%;
+    height:44px;
+    padding:0 14px;
+    border:1px solid #dfe3ee;
+    border-radius:10px;
+    background:#fff;
+    font-size:14px;
+    font-family:"Prompt","Tahoma",sans-serif;
+    color:#2b3245;
+    transition:border-color .2s, box-shadow .2s;
+}
+
+.form select{
+    cursor:pointer;
+}
+
+.form input[type="color"]{
+    padding:4px;
+    width:64px;
+    cursor:pointer;
+}
+
+.form input:focus,
+.form select:focus{
+    outline:none;
+    border-color:#5b6ee1;
+    box-shadow:0 0 0 3px rgba(91,110,225,.16);
+}
+
+/* ===== ปุ่ม ===== */
+button{
+    padding:12px 20px;
+    border:none;
+    border-radius:12px;
+    background:#5b6ee1;
+    color:#fff;
+    cursor:pointer;
+    font-size:14px;
+    font-weight:600;
+    font-family:"Prompt","Tahoma",sans-serif;
+    line-height:1.4;
+    transition:all .2s ease;
+    box-shadow:0 4px 12px rgba(91,110,225,.28);
+}
+
+button:hover{
+    background:#4658d6;
+    transform:translateY(-1px);
+    box-shadow:0 6px 16px rgba(91,110,225,.36);
+}
+
+button:active{
+    transform:translateY(0);
+}
+
+button:focus-visible{
+    outline:none;
+    box-shadow:0 0 0 3px rgba(91,110,225,.35);
+}
+
+.btn-add{
+    height:44px;
+    padding:0 20px;
+}
+
+button.small{
+    padding:8px 12px;
+    font-size:13px;
+    border-radius:10px;
+    box-shadow:none;
+    background:#eef0fd;
+    color:#5b6ee1;
+}
+
+button.small:hover{
+    background:#dfe4fa;
+    transform:none;
+    box-shadow:none;
+}
+
+button.small.danger{
+    background:#ffebee;
+    color:#e53935;
+}
+
+button.small.danger:hover{
+    background:#ffdde1;
+}
+
+button.danger{
+    background:#ef5350;
+    box-shadow:0 4px 12px rgba(239,83,80,.28);
+}
+
+button.danger:hover{
+    background:#e53935;
+    box-shadow:0 6px 16px rgba(239,83,80,.36);
+}
+
+button.editing{
+    background:#43a047;
+    box-shadow:0 4px 12px rgba(67,160,71,.28);
+}
+
+button.editing:hover{
+    background:#388e3c;
+}
+
+.buttons{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin:20px 0;
+}
+
+.buttons button{
+    flex:1;
+    min-width:150px;
+}
+
+/* ===== รายการกิจกรรม ===== */
+ul{
+    list-style:none;
+    margin-top:10px;
+}
+
+li{
+    margin-bottom:8px;
+}
+
+.list-item{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:10px 14px;
+    border:1px solid #eef0f8;
+    border-radius:12px;
+    background:#fff;
+    margin-bottom:8px;
+    transition:all .15s ease;
+}
+
+.list-item:hover{
+    border-color:#dfe4f5;
+    box-shadow:0 4px 14px rgba(30,40,90,.07);
+}
+
+.list-item.empty{
+    justify-content:center;
+    color:#9aa1b3;
+    font-style:italic;
+    background:#fafbff;
+}
+
+.list-info{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    flex:1;
+    min-width:0;
+}
+
+.color-dot{
+    display:inline-block;
+    width:14px;
+    height:14px;
+    border-radius:50%;
+    flex:none;
+    box-shadow:0 0 0 2px #fff, 0 0 0 3px rgba(30,40,90,.12);
+}
+
+.day-chip{
+    background:#eef0fd;
+    color:#5b6ee1;
+    padding:3px 12px;
+    border-radius:999px;
+    font-size:12px;
+    font-weight:600;
+    flex:none;
+}
+
+.list-time{
+    color:#8a93a6;
+    font-size:13px;
+    white-space:nowrap;
+    flex:none;
+}
+
+.list-activity{
+    font-weight:600;
+    color:#2b3245;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+
+.list-actions{
+    display:flex;
+    gap:6px;
+    flex:none;
+}
+
+/* ===== ตารางกิจกรรม ===== */
+hr{
+    border:0;
+    border-top:1px dashed #e3e7f2;
+    margin:24px 0;
+}
+
+#schedule{
+    margin-top:20px;
+    background:white;
+    border:1px solid #eef0f8;
+    border-radius:16px;
+    overflow:hidden;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th{
+    background:linear-gradient(135deg,#5b6ee1,#7c5ce7);
+    color:white;
+    font-weight:600;
+}
+
+th,td{
+    border:1px solid #eef0f8;
+    padding:13px 12px;
+    text-align:center;
+    font-size:14px;
+}
+
+tr:nth-child(even){
+    background:#f8f9fe;
+}
+
+/* ===== ตารางรายสัปดาห์ (Weekly Grid) ===== */
+#gridSection{
+    margin-top:30px;
+}
+
+.grid-row{
+    display:flex;
+    margin-bottom:6px;
+}
+
+.grid-header{
+    margin-bottom:2px;
+}
+
+.grid-day-label{
+    width:110px;
+    flex:none;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    text-align:center;
+    font-weight:600;
+    font-size:14px;
+    color:#3a4157;
+    background:#f8f9fe;
+    border:1px solid #eef0f8;
+    border-radius:10px;
+    margin-right:6px;
+    padding:4px;
+}
+
+.grid-day-label small{
+    font-weight:400;
+    color:#8a93a6;
+    font-size:11px;
+    line-height:1.3;
+}
+
+.grid-hour{
+    flex:1;
+    text-align:center;
+    font-size:12px;
+    color:#9aa1b3;
+}
+
+.grid-track{
+    flex:1;
+    position:relative;
+    border:1px solid #e6e9f4;
+    border-radius:10px;
+    background:#fbfcff;
+    overflow:hidden;
+}
+
+.grid-line{
+    position:absolute;
+    top:0;
+    bottom:0;
+    border-left:1px solid #f0f2f9;
+}
+
+.grid-block{
+    position:absolute;
+    border-radius:8px;
+    padding:2px 6px;
+    font-size:12px;
+    font-weight:600;
+    color:#333;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    box-shadow:0 2px 6px rgba(30,40,90,.14);
+    min-width:8px;
+    border:1px solid rgba(30,40,90,.08);
+}
+
+/* กล่องเวลาว่างใน grid */
+.grid-block.grid-free{
+    background:#e9f6ec;
+    color:#2e7d32;
+    font-weight:400;
+    font-size:11px;
+    border:1px dashed #b7dfc0;
+    box-shadow:none;
+}
+
+/* เปอร์เซ็นต์ว่างในป้ายชื่อวัน */
+.grid-day-label .free-pct{
+    color:#2e7d32;
+    font-weight:700;
+    font-size:12px;
+}
+
+/* ===== สรุปเวลาว่าง ===== */
+.free-summary{
+    margin-bottom:16px;
+    background:#f2faf4;
+    border:1px solid #dcefe0;
+    border-radius:14px;
+    padding:12px 16px;
+    font-size:14px;
+}
+
+.free-overall{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:12px;
+}
+
+.free-title b{
+    color:#2e7d32;
+    font-size:16px;
+}
+
+.free-title small{
+    color:#7d8a93;
+}
+
+.free-bar{
+    flex:1;
+    min-width:160px;
+    height:14px;
+    background:#cde9d3;
+    border-radius:7px;
+    overflow:hidden;
+}
+
+.free-bar-busy{
+    height:100%;
+    background:linear-gradient(90deg,#ffb74d,#ff9800);
+}
+
+.free-bar-legend{
+    font-size:12px;
+    color:#55606e;
+    display:flex;
+    gap:8px;
+    align-items:center;
+}
+
+.dot{
+    display:inline-block;
+    width:11px;
+    height:11px;
+    border-radius:3px;
+}
+
+.dot.busy{
+    background:#ff9800;
+}
+
+.dot.free{
+    background:#cde9d3;
+}
+
+/* แถวสรุปเวลาว่างในตารางกิจกรรม */
+.free-summary-row td{
+    background:#e9f6ec;
+    color:#2e7d32;
+    font-weight:600;
+}
+
+/* ===== มือถือ ===== */
+@media (max-width:760px){
+    body{
+        padding:14px 10px;
+    }
+
+    .container{
+        padding:16px;
+        border-radius:14px;
+    }
+
+    .app-header{
+        padding:22px 14px 18px;
+    }
+
+    .app-header h1{
+        font-size:21px;
+    }
+
+    .form{
+        padding:14px;
+    }
+
+    .field{
+        flex:1 1 45%;
+    }
+
+    .field-grow{
+        flex:1 1 100%;
+    }
+
+    .grid-day-label{
+        width:78px;
+        font-size:12px;
+    }
+
+    .list-info{
+        flex-wrap:wrap;
+    }
+
+    .list-activity{
+        width:100%;
+    }
+
+    .buttons button{
+        min-width:100%;
+    }
+}
